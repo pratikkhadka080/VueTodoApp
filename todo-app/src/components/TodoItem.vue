@@ -1,14 +1,21 @@
 <template>
-    <li class="list-group-item d-flex align-items-center">
-        <input type="checkbox" v-model="localTodo.completed" @change="updateTodo" class="form-check-input me-2" />
-        <input v-if="editing" v-model="localTodo.text" @keyup.enter="finishEdit" @blur="finishEdit" ref="editInput"
-            class="editable-input form-control  d-flex jusitfy-content-start position-relatives" />
-        <span v-if="!editing" :class="{ completed: todo.completed, 'flex-grow-1': !editing }" @dblclick="editTodo">
-            <span>{{
-                todo.text }}</span>
-        </span>
-        <button @click="$emit('delete')" class="btn btn-danger btn-sm">x</button>
-    </li>
+    <div class="row">
+        <div class="col-2">
+            <input type="checkbox" v-model="localTodo.completed" @change="updateTodo" class="todo-checkbox p-3" />
+        </div>
+        <div class="col-8 px-0">
+            <input v-if="editing" v-model="localTodo.text" @keyup.enter="finishEdit" @blur="finishEdit" ref="editInput"
+                class="editable-input  form-control  d-flex jusitfy-content-start" />
+            <span v-if="!editing" :class="{ completed: todo.completed, 'flex-grow-1': !editing }" @dblclick="editTodo">
+                <p class="mb-1">{{
+                    todo.text
+                    }}</p>
+            </span>
+        </div>
+        <div class=" col-2">
+            <button @click="$emit('delete')" class="common-button btn btn-danger btn-sm">x</button>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -58,27 +65,23 @@ export default {
 </script>
 
 <style scoped>
+@import '../assets/common-button.css';
+
+.todo-checkbox {
+    height: 23px;
+    width: 45px;
+}
+
 .completed {
     text-decoration: line-through;
 }
 
-li {
-    display: flex;
-    align-items: center;
-}
-
-input[type='text'] {
-    flex-grow: 1;
-    border: none;
-}
-
-input[type='text']:focus {
-    outline: none;
-}
-
 .editable-input {
-    width: 90%;
-    /* z-index: 5;
-    background-color: white; */
+    position: relative;
+    bottom: 8px;
+    height: 35px;
+    padding: 4px;
+    margin: 4px;
+    z-index: 5;
 }
 </style>

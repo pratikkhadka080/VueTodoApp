@@ -1,11 +1,8 @@
 <template>
   <div id="app" class="d-flex justify-content-center align-items-center vh-100">
-    <div class="card" style="width: 30rem;">
-      <div class="card-body">
-        <TodoList />
-      </div>
-    </div>
+    <TodoList />
   </div>
+
 </template>
 
 <script>
