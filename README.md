@@ -1,5 +1,9 @@
 # VueTodoApp
-A simple and elegant Todo application built with Vue.js, following best practices and maintaining code quality. This app allows you to add, edit, delete, and filter todo items.
+A simple and elegant Todo application built with Vue.js, following best practices and maintaining code quality. This app allows you to add, edit, delete, and filter Todo items.
+
+## Demo
+
+![Demo](https://pratikkhadka080.github.io/VueTodoApp/)
 
 ## Features
 
